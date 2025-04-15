@@ -24,3 +24,32 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.typing-wrapper {
+  position: relative;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 13;
+  color: #ea7a3b;
+  min-height: 1.5em;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: #334155;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
