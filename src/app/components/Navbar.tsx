@@ -16,7 +16,7 @@ export default function Navbar() {
     }
     const handleClickNavbarButton = (item: any) => {
         if(item == "Explorer"){
-            window.location.href = "http://localhost:5173"
+            window.location.href = "https://ping-dashboard-custom.netlify.app"
         }
        
     }

@@ -8,7 +8,7 @@ export default function Advantages(props : any) {
     const theme = useSelector((state: any) => state.theme.theme.isDark);
     const { 
         companyName = "Your Company Advantage",
-        companyDescription = "Kyronode is dedicated to safeguarding decentralized ecosystems as a leading PoS validator. With our high-performance infrastructure, we provide maximum security, reliability, and efficiency, ensuring that your assets are protected and blockchain networks remain resilient. Our focus on innovation and scalability drives the long-term success and growth of the blockchain we support."
+        companyDescription = "Your Company is dedicated to safeguarding decentralized ecosystems as a leading PoS validator. With our high-performance infrastructure, we provide maximum security, reliability, and efficiency, ensuring that your assets are protected and blockchain networks remain resilient. Our focus on innovation and scalability drives the long-term success and growth of the blockchain we support."
 
      } = props;
 
@@ -21,7 +21,7 @@ export default function Advantages(props : any) {
     <div className='flex flex-col justify-center items-center'>
 
     
-        <div className={`mx-4 md:mx-15 xl:mx-15 p-8 md:p-10 rounded-md ${theme ? "bg-slate-700 text-slate-200" : "bg-white"} transition-colors duration-500 ease-in-out lg:w-4/5 xl:w-2/3`}>
+        <div className={`mx-4 md:mx-15 xl:mx-15 p-8 md:p-10 rounded-md ${theme ? "bg-slate-700 text-slate-200" : "text-gray-900 bg-white"} transition-colors duration-500 ease-in-out lg:w-4/5 xl:w-2/3`}>
             <h1 className="mb-4 text-2xl md:text-4xl font-bold">{companyName}</h1>
             <p className='mt-2 text-base md:text-lg'>{companyDescription}</p>
             <div className='w-full mx-2 flex flex-col lg:flex-row wrap gap-5 justify-center items-top mt-10 text-center 3xl:justify-between 3xl:gap-0'>
