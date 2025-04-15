@@ -29,7 +29,7 @@ body {
   position: relative;
   display: inline-block;
   font-family: monospace;
-  font-size: 13;
+  /* font-size: 72; */
   color: #ea7a3b;
   min-height: 1.5em;
 }
