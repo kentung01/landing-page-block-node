@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 
-export default function HeroText() {
+interface ScrollToNetworkPage {
+  scrollToNetworkPage: () => void;
+}
+
+export default function HeroText({scrollToNetworkPage} : ScrollToNetworkPage) {
     const theme = useSelector((state: any) => state.theme.theme.isDark);
 
 
@@ -78,7 +82,7 @@ export default function HeroText() {
                 Delegate your assets securely and embrace transformative interchain solutions for growth
             </p>
             <div className={`flex gap-4 ${theme ? "text-slate-200" : "text-gray-800"} transition-colors duration-500 ease-in-out`}>
-                <button className=" text-base md:text-lg rounded-md px-4 py-2 text-slate-200 bg-orange-600 hover:bg-orange-700">Networks</button>
+                <button onClick={scrollToNetworkPage} className=" text-base md:text-lg rounded-md px-4 py-2 text-slate-200 bg-orange-600 hover:bg-orange-700">Networks</button>
                 <button onClick={handleClickExplorer} className=" text-base md:text-lg rounded-md px-4 py-2 text-slate-200 bg-gray-500 hover:bg-gray-700" >Explorer</button>
             </div>
 

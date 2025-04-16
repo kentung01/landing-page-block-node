@@ -1,7 +1,7 @@
 "use client"
 import { useSelector } from "react-redux";
 import Navbar from "./components/Navbar";
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import Graph from "./components/Gaph";
 import HeroText from "./components/HeroText";
 import Advantages from "./components/Advantages";
@@ -12,7 +12,13 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   const theme = useSelector((state: any) => state.theme.theme.isDark);
+  const refNetworkPage = useRef<HTMLDivElement>(null)
 
+  const scrollToNetworkPage = () => {
+    if (refNetworkPage.current) {
+      refNetworkPage.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
 
   useEffect(() => {
@@ -24,13 +30,13 @@ export default function Home() {
     <div className={`text-3xl h-full ${theme ? "bg-gray-800 " : "bg-gray-100 "} transition-colors duration-500 ease-in-out`}>
       <Navbar />
       <Graph>
-        <HeroText />
+        <HeroText scrollToNetworkPage={scrollToNetworkPage} />
       </Graph>
       <div className="">
         <div className="mt-27"></div>
         <Advantages />
         <Servers />
-        <Networks />
+        <Networks ref={refNetworkPage} />
       </div>
       <Footer />
 
