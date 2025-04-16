@@ -77,7 +77,7 @@ export default function Navbar() {
             </div>
             {isSmallMenu &&
 
-                <div className={`absolute right-0 top-15 w-50 p-5 ${theme ? "bg-gray-800 text-slate-200" : "text-black"} transition-colors duration-500 ease-in-out`}>
+                <div className={`absolute right-0 top-15 w-50 p-5 ${theme ? "bg-gray-800 text-slate-200" : "bg-white  text-black"} transition-colors duration-500 ease-in-out`}>
                     {menu.map((item, index) => {
                         return (
                             <div onClick={() => handleClickNavbarButton(item)} key={index} className={` ${index == menu.length - 1 ? "rounded-full ps-2" : "rounded-md px-2"} pt-2 text-lg hover:text-white hover:bg-orange-500 text-center items-center cursor-pointer transition duration-500 ease-in-out`}>

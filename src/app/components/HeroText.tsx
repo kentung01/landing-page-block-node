@@ -9,6 +9,12 @@ export default function HeroText() {
     const [text, setText] = useState("")
     const [isTyping, setIsTyping] = useState(true)
     const fullText = "Company"
+
+       const handleClickExplorer = () => {
+            window.location.href = "https://ping-dashboard-custom.netlify.app"  
+        }
+
+    
   
     useEffect(() => {
       let index = 0
@@ -46,6 +52,7 @@ export default function HeroText() {
     }, [])
 
 
+
     return (
         <div className='flex flex-col justify-center items-center mt-50 md:mt-100'>
             <div className=''>
@@ -72,7 +79,7 @@ export default function HeroText() {
             </p>
             <div className={`flex gap-4 ${theme ? "text-slate-200" : "text-gray-800"} transition-colors duration-500 ease-in-out`}>
                 <button className=" text-base md:text-lg rounded-md px-4 py-2 text-slate-200 bg-orange-600 hover:bg-orange-700">Networks</button>
-                <button className=" text-base md:text-lg rounded-md px-4 py-2 text-slate-200 bg-gray-500 hover:bg-gray-700" >Explorer</button>
+                <button onClick={handleClickExplorer} className=" text-base md:text-lg rounded-md px-4 py-2 text-slate-200 bg-gray-500 hover:bg-gray-700" >Explorer</button>
             </div>
 
         
