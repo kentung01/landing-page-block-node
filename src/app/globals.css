@@ -44,6 +44,16 @@ body {
   animation: blink 2s infinite;
 }
 
+
+.grenze-gotisch-title {
+  font-family: "Grenze Gotisch", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
 @keyframes blink {
   0%,
   100% {

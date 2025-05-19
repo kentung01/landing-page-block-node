@@ -8,6 +8,9 @@ import Advantages from "./components/Advantages";
 import Servers from "./components/Servers";
 import Networks from "./components/Networks";
 import Footer from "./components/Footer";
+import Infrastructure from "./components/Infrastructure";
+import ValidatorNetworks from "./components/Validator";
+import AboutUs from "./components/AboutUs";
 
 
 export default function Home() {
@@ -34,9 +37,11 @@ export default function Home() {
       </Graph>
       <div className="">
         <div className="mt-27"></div>
-        <Advantages />
-        <Servers />
-        <Networks ref={refNetworkPage} />
+        {/* <Advantages /> */}
+        <AboutUs  />
+        <Infrastructure/>
+        {/* <Networks ref={refNetworkPage} /> */}
+        <ValidatorNetworks ref={refNetworkPage} />
       </div>
       <Footer />
 

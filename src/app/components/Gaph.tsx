@@ -365,7 +365,8 @@ export default function NetworkGraph({ children }: any) {
           const age = now - (node.createdAt || 0)
           if (age < 1000) {
             // New nodes are highlighted
-            ctx.fillStyle = `rgba(255, 165, 0, ${0.7 + (0.3 * (1000 - age)) / 1000})`
+            // ctx.fillStyle = `rgba(255, 165, 0, ${0.7 + (0.3 * (1000 - age)) / 1000})`
+            ctx.fillStyle = `rgba(153, 27, 27, ${0.7 + (0.3 * (1000 - age)) / 1000})`
             ctx.arc(node.x, node.y, node.radius * (1 + (0.5 * (1000 - age)) / 1000), 0, Math.PI * 2)
           } else {
             // After 1 second, transition to normal
@@ -393,9 +394,11 @@ export default function NetworkGraph({ children }: any) {
   }, [mousePosition, theme]) // Added theme to dependencies to ensure it updates
 
   return (
-    <div className="relative w-full h-150 md:min-h-screen">
-      <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />
-      <div className="relative z-10 flex flex-col items-center justify-center p-8 text-center">{children}</div>
+    <div className=" w-screen overflow-hidden " >
+      <div className="relative w-full h-150 md:min-h-screen hover:scale-110 transition-transform duration-2000 ease-in-out ">
+        <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-ful"  />
+        <div className="relative z-10 flex flex-col items-center justify-center p-8 text-center ">{children}</div>
+      </div>
     </div>
   )
 }
