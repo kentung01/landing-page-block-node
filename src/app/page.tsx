@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Infrastructure from "./components/Infrastructure";
 import ValidatorNetworks from "./components/Validator";
 import AboutUs from "./components/AboutUs";
+import Footer2 from "./components/Footer2";
 
 
 export default function Home() {
@@ -43,7 +44,9 @@ export default function Home() {
         {/* <Networks ref={refNetworkPage} /> */}
         <ValidatorNetworks ref={refNetworkPage} />
       </div>
-      <Footer />
+      {/* <Footer /> */}
+
+      <Footer2/>
 
 
     </div>
