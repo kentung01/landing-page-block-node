@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setDarkMode } from '../redux/slice/themeSlice';
 import { IoSunnyOutline } from 'react-icons/io5';
 
-export default function Navbar() {
+export default function Navbar({serviceClick}: any) {
     const theme = useSelector((state: any) => state.theme.theme.isDark);
     const dispatch = useDispatch();
 
@@ -17,6 +17,10 @@ export default function Navbar() {
     const handleClickNavbarButton = (item: any) => {
         if(item == "Explorer"){
             window.location.href = "https://ping-dashboard-custom.netlify.app"
+        }
+
+        if(item == "Service"){
+            serviceClick()
         }
        
     }
@@ -51,7 +55,7 @@ export default function Navbar() {
             
             <div className={` container w-full h-15 md:h-27 border-b border-black flex justify-between items-center shadow-lg fixed z-50 ${theme ? "bg-red-900 text-white" : "bg-white text-black"} transition-colors duration-500 ease-in-out rounded-b-xl`}>
                 <div className=' items-center text-center ps-10 flex flex-row'>
-                    <Image className='w-[100px] rounded-full' src="/5kage.png" alt="logo" width={200} height={500} />
+                    <Image className={` lg:w-[100px] w-[50px] rounded-full`} src="/5kage.png" alt="logo" width={200} height={500} />
                     <p className='grenze-gotisch-title'>5 KAGE LABS</p>
                 </div>
             

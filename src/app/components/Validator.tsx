@@ -3,17 +3,18 @@ import { useRef } from "react"
 import { CheckCircle } from "lucide-react"
 import { useSelector } from "react-redux"
 
+
 interface Props {
   ref?: any
 }
 
-export default function ValidatorNetworks({ ref }: Props) {
+export default function ValidatorNetworks({ ref, ...props }: Props) {
   const theme = useSelector((state: any) => state.theme.theme.isDark)
   const networkRef = useRef(null)
 
   const networks = [
     {
-      image: "/placeholder.svg?height=40&width=40",
+      image: "/story.jpeg",
       title: "Story Protocol",
       description: "Story Staking Validator",
       role: "Active Validator ensuring network security & decentralization.",
@@ -23,22 +24,22 @@ export default function ValidatorNetworks({ ref }: Props) {
       status: "active",
     },
     {
-      image: "/placeholder.svg?height=40&width=40",
+      image: "/og.png",
       title: "0G Network",
       description: "0G Blockchain",
       role: "Validator maintaining consensus integrity and uptime.",
       serviceLink: "https://0g.network",
-      explorerLink: "https://explorer.0g.network",
+      explorerLink: "https://ping-dashboard-custom.netlify.app",
       dashboardLink: "https://0g.network/validator-dashboard",
       status: "active",
     },
     {
-      image: "/placeholder.svg?height=40&width=40",
+      image: "/kii.jpeg",
       title: "Kiichain",
       description: "Kiichain Testnet",
       role: "Validator supporting testnet stability and infrastructure robustness.",
       serviceLink: "https://kiichain.org",
-      explorerLink: "https://explorer.kiichain.org",
+      explorerLink: "https://ping-dashboard-custom.netlify.app",
       dashboardLink: "https://kiichain.org/validator-dashboard",
       status: "testnet",
     },
@@ -117,7 +118,7 @@ export default function ValidatorNetworks({ ref }: Props) {
   }
 
   return (
-    <div className="py-16">
+    <div className="py-16" ref={ref} id="validator">
       <div className="w-full flex flex-col justify-center items-center">
         <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-2">
           <h2
@@ -162,7 +163,7 @@ export default function ValidatorNetworks({ ref }: Props) {
             Why This Matters
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:text-sm text-lg md:grid-cols-3 md:text-lg gap-6 xl:text-xl">
             {benefits.map((benefit, index) => (
               <div
                 key={index}

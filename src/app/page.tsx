@@ -17,6 +17,9 @@ import Footer2 from "./components/Footer2";
 export default function Home() {
   const theme = useSelector((state: any) => state.theme.theme.isDark);
   const refNetworkPage = useRef<HTMLDivElement>(null)
+  const refServicePage = useRef<HTMLDivElement>(null)
+
+  
 
   const scrollToNetworkPage = () => {
     if (refNetworkPage.current) {
@@ -25,6 +28,12 @@ export default function Home() {
   };
 
 
+  const scrollToServicePage = () => {
+    if (refServicePage.current) {
+      refServicePage.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     // console.log(isDark);
@@ -32,7 +41,7 @@ export default function Home() {
   }, []);
   return (
     <div className={`text-3xl h-full ${theme ? "bg-gray-800 " : "bg-gray-100 "} transition-colors duration-500 ease-in-out`}>
-      <Navbar />
+      <Navbar  serviceClick= {scrollToServicePage} />
       <Graph>
         <HeroText scrollToNetworkPage={scrollToNetworkPage} />
       </Graph>
@@ -40,7 +49,7 @@ export default function Home() {
         <div className="mt-27"></div>
         {/* <Advantages /> */}
         <AboutUs  />
-        <Infrastructure/>
+        <Infrastructure ref={refServicePage} />
         {/* <Networks ref={refNetworkPage} /> */}
         <ValidatorNetworks ref={refNetworkPage} />
       </div>

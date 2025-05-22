@@ -11,36 +11,7 @@ export default function Footer2() {
 
   return (
     <div className="w-full">
-      {/* Call to Action Section */}
-      <div
-        className={`w-full py-16 ${
-          theme ? "bg-slate-800 text-white" : "bg-gray-100 text-black"
-        } transition-colors duration-500 ease-in-out`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to Monitor Your Network with 5KAGE Precision?</h2>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/get-started"
-              className={`px-6 py-3 rounded-md font-medium text-white ${
-                theme ? "bg-orange-600 hover:bg-orange-700" : "bg-orange-500 hover:bg-orange-600"
-              } transition-colors duration-300`}
-            >
-              Get Started Free
-            </Link>
-            <Link
-              href="/book-demo"
-              className={`px-6 py-3 rounded-md font-medium ${
-                theme
-                  ? "bg-slate-700 text-white hover:bg-slate-600"
-                  : "bg-white text-gray-800 border border-gray-300 hover:bg-gray-100"
-              } transition-colors duration-300`}
-            >
-              Book a Demo
-            </Link>
-          </div>
-        </div>
-      </div>
+     
 
       {/* Main Footer */}
       <footer
